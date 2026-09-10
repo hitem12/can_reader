@@ -1,7 +1,9 @@
 add_library(can_reader_lib STATIC
         SocketCtl.cpp
         SocketCtl.h
-        Frame.h)
+        Frame.h
+        SpecialId.cpp
+        SpecialId.h)
 
 target_include_directories(can_reader_lib PUBLIC .)
 
