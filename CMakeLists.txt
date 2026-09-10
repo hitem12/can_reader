@@ -3,6 +3,7 @@ project(can_reader CXX)
 
 include(CTest)
 include(GNUInstallDirs)
+include(CTest)
 
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set(CMAKE_INSTALL_PREFIX "/usr" CACHE PATH "Install prefix" FORCE)
@@ -26,7 +27,10 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 find_package(CLI11 REQUIRED)
 find_package(spdlog REQUIRED)
 add_subdirectory(src)
-
+# add tests
+if(BUILD_TESTING)
+    add_subdirectory(tests)
+endif ()
 # --- install rules ---
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 
