@@ -1,6 +1,9 @@
-add_library(can_reader_lib INTERFACE)
-target_include_directories(can_reader_lib INTERFACE .)
-#target_include_directories(can_reader_lib PUBLIC .)
+add_library(can_reader_lib STATIC
+        SocketCtl.cpp
+        SocketCtl.h
+        Frame.h)
+
+target_include_directories(can_reader_lib PUBLIC .)
 
 add_executable(can_reader
         main.cpp
