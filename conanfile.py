@@ -34,7 +34,6 @@ class NetlearnConan(ConanFile):
     # Build/Test dependencies
     test_requires = (
         "gtest/1.17.0",
-        "benchmark/1.8.4",
     )
     
     # Generators for CMake integration
