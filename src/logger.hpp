@@ -17,7 +17,7 @@ public:
 
 private:
     Logger() {
-        logger_ = spdlog::stdout_color_mt("can_reader");
+        logger_ = spdlog::stderr_color_mt("can_reader");
         logger_->set_level(spdlog::level::debug);
         spdlog::set_default_logger(logger_);
     }
