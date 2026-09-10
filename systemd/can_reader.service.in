@@ -1,0 +1,15 @@
+[Unit]
+Description=@PROJECT_NAME@ CAN daemon
+#After=sys-subsystem-net-devices-@MYTOOL_CAN_IFACE@.device
+#BindsTo=sys-subsystem-net-devices-@MYTOOL_CAN_IFACE@.device
+
+[Service]
+Type=exec
+ExecStart=@CMAKE_INSTALL_FULL_BINDIR@/@PROJECT_NAME@ --interface @CAN_IFACE@
+Restart=on-failure
+RestartSec=2
+# harden a bit
+DynamicUser=yes
+
+[Install]
+WantedBy=multi-user.target
