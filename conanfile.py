@@ -27,7 +27,6 @@ class NetlearnConan(ConanFile):
     # Runtime dependencies
     requires = (
         "cli11/2.6.0",
-        "libpcap/1.10.5",
         "spdlog/1.17.0",
     )
     
