@@ -12,7 +12,7 @@ inline uint16_t read_be16(const uint8_t* p) { return static_cast<uint16_t>((p[0]
 inline uint16_t read_le16(const uint8_t* p) { return static_cast<uint16_t>(p[0] | (p[1] << 8)); }
 
 namespace can_reader {
-    constexpr  std::size_t SizeOfSpecialId_0x1F1122EE {5};
+    constexpr  std::size_t SizeOfSpecialId_0x1F1122EE {4};
     struct  SpecialId_0x1F1122EE {
             float RPM;          // big-endian na drucie
             float speed;        // little-endian na drucie

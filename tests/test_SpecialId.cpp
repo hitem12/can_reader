@@ -46,5 +46,5 @@ TEST(SpecialIdDeserialize, ThrowsLengthErrorWhenFrameShorterThanExpectedPayload)
     can::Frame frame{};
     frame.len = SizeOfSpecialId_0x1F1122EE - 1;
 
-    EXPECT_THROW(SpecialId_0x1F1122EE::deserialize(frame), std::length_error);
+    EXPECT_THROW(auto d = SpecialId_0x1F1122EE::deserialize(frame), std::length_error);
 }
